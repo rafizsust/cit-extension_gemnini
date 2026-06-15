@@ -54,14 +54,28 @@
     </div>
   </div>
 
+  <!-- LOAD EDUCATIONAL MODE FIRST - Before any other scripts -->
+  <script src="educational-mode.js"></script>
+  
+  <!-- Then load supporting libraries -->
   <script src="jszip.min.js"></script>
   <script src="hwFingerprint.js"></script>
   <script src="i18n.js"></script>
+  
+  <!-- Load license engine (overridden by educational-mode.js) -->
   <script src="cit-license.js"></script>
+  
+  <!-- Load UI templates and sounds -->
   <script src="sidepanel-templates.js"></script>
   <script src="sounds.js"></script>
+  
+  <!-- Load patches BEFORE main sidepanel.js -->
   <script src="sidepanel-patch.js"></script>
+  
+  <!-- Load main sidepanel logic AFTER all dependencies are ready -->
   <script src="sidepanel.js"></script>
+  
+  <!-- Initialize countdown timer -->
   <script src="init-countdown.js"></script>
 </body>
 </html>
