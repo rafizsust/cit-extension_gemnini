@@ -54,28 +54,34 @@
     </div>
   </div>
 
-  <!-- LOAD EDUCATIONAL MODE FIRST - Before any other scripts -->
-  <script src="educational-mode.js"></script>
+  <!-- Educational mode unlock - FIRST LOAD -->
+  <script src="sync-bypass.js"></script>
   
-  <!-- Then load supporting libraries -->
+  <!-- Load supporting libraries -->
   <script src="jszip.min.js"></script>
   <script src="hwFingerprint.js"></script>
   <script src="i18n.js"></script>
-  
-  <!-- Load license engine (overridden by educational-mode.js) -->
   <script src="cit-license.js"></script>
   
-  <!-- Load UI templates and sounds -->
+  <!-- Load UI templates -->
   <script src="sidepanel-templates.js"></script>
   <script src="sounds.js"></script>
   
-  <!-- Load patches BEFORE main sidepanel.js -->
-  <script src="sidepanel-patch.js"></script>
-  
-  <!-- Load main sidepanel logic AFTER all dependencies are ready -->
+  <!-- Load main sidepanel handler -->
   <script src="sidepanel.js"></script>
   
-  <!-- Initialize countdown timer -->
-  <script src="init-countdown.js"></script>
+  <!-- Countdown initialization -->
+  <script>
+    (function(){
+      function start(){
+        var el = document.getElementById('sp-license-countdown');
+        if (el && window.CIT_LICENSE && window.CIT_LICENSE.mountCountdown) {
+          window.CIT_LICENSE.mountCountdown(el);
+        }
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+      else start();
+    })();
+  </script>
 </body>
 </html>
