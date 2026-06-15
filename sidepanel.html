@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ITFair - Side Panel</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="sp-header">
+    <div class="sp-brand">
+      <img class="sp-brand-logo" src="logo-square.png" alt=""><span class="sp-brand-text">ITFair</span>
+      <span class="sp-badge">3.8.5</span>
+    </div>
+    <div class="sp-header-actions">
+      <span id="sp-license-countdown" class="sp-license-countdown" style="display:none"></span>
+      <button class="sp-icon-btn sp-notif-btn" data-i18n-title="header.notifications" title="Notifications">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <span class="sp-notif-badge" style="display:none">0</span>
+      </button>
+      <button class="sp-icon-btn sp-theme-btn" data-i18n-title="header.theme" title="Theme">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+  
+  <div class="sp-body" id="sp-body">
+    <div style="padding:40px 0;text-align:center">
+      <p style="color:var(--ql-text-muted)">⏳ Loading...</p>
+    </div>
+  </div>
+
+  <div class="sp-footer">
+    <button class="sp-back-to-popup" id="sp-back-to-popup" title="Back to popup" data-i18n="sp.backToPopup">
+      ◀ Popup
+    </button>
+    <a href="https://wa.me/8801788258961" target="_blank" rel="noopener" class="sp-support-link" title="WhatsApp: 01788258961">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01zM12.05 20.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.21 8.21 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.13s-.64.8-.79.97c-.14.17-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.22-.74-.66-1.23-1.47-1.37-1.72-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.06s.88 2.39 1 2.55c.12.17 1.74 2.66 4.22 3.73.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
+      <span>Support</span>
+    </a>
+    <span class="sp-footer-badge">ITFair • v3.8.5</span>
+  </div>
+
+  <div class="sp-notif-panel" id="sp-notif-panel" style="display:none">
+    <div class="sp-notif-header">
+      <span data-i18n="notif.title">Notifications</span>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <button id="sp-notif-markread" title="Mark all as read" style="background:none;border:none;cursor:pointer;font-size:11px;color:var(--ql-text-muted);padding:2px 6px;border-radius:4px;">✓ Read</button>
+        <button class="sp-notif-close" id="sp-notif-close">✕</button>
+      </div>
+    </div>
+    <div class="sp-notif-list" id="sp-notif-list">
+      <p class="sp-notif-empty">Loading...</p>
+    </div>
+  </div>
+
+  <script src="jszip.min.js"></script>
+  <script src="hwFingerprint.js"></script>
+  <script src="i18n.js"></script>
+  <script src="cit-license.js"></script>
+  <script src="sidepanel-templates.js"></script>
+  <script src="sounds.js"></script>
+  <script src="sidepanel-patch.js"></script>
+  <script src="sidepanel.js"></script>
+  <script src="init-countdown.js"></script>
+</body>
+</html>

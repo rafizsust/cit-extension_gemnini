@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "ITFair Extension",
+  "version": "3.8.5",
+  "description": "Educational assistant extension by ITFair",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "sidePanel",
+    "cookies"
+  ],
+  "host_permissions": [
+    "https://*.lovable.dev/*",
+    "https://*.lovable.app/*"
+  ],
+  "action": {
+    "default_title": "Open ITFair Side Panel"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  }
+}
